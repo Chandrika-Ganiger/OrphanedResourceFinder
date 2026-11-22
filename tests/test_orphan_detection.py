@@ -22,3 +22,4 @@ assert associated_ips[0]["name"] == "IP-Associated"
 assert unassociated_ips[0]["name"] == "IP-Unassociated"
 
 print("All orphan detection tests passed!")
+print("All orphan detection tests passed!")
