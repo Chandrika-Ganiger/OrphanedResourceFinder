@@ -1,4 +1,3 @@
-
 # Sample public IP resources for testing
 
 public_ips = [
@@ -15,12 +14,11 @@ for ip in public_ips:
     else:
         associated_ips.append(ip)
 
-print("ASSOCIATED PUBLIC IPs:")
+# Verify the classification
+assert len(associated_ips) == 1
+assert len(unassociated_ips) == 1
 
-for ip in associated_ips:
-    print(ip["name"], "- Associated")
+assert associated_ips[0]["name"] == "IP-Associated"
+assert unassociated_ips[0]["name"] == "IP-Unassociated"
 
-print("\nUNASSOCIATED PUBLIC IPs:")
-
-for ip in unassociated_ips:
-    print(ip["name"], "- Potential orphan candidate")
+print("All orphan detection tests passed!")
